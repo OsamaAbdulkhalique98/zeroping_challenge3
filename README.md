@@ -20,3 +20,30 @@ Once interns are nominated to a host startup, there's no structured tracking of 
 Vanilla JavaScript, HTML, and CSS, bundled with [Vite](https://vitejs.dev/). No backend — all data is in-memory mock data, resettable via "Reset Demo."
 
 ## Project Structure
+
+```
+hiring-funnel/
+├── index.html          # App shell — sidebar nav, role switcher, page container
+├── main.js             # Data model, routing, page renders, event handlers
+├── style.css            # Design system + component styles
+├── public/
+│   └── vite.svg
+├── package.json
+└── package-lock.json
+```
+
+## Getting Started
+
+Requires Node.js 18+ and npm.
+
+```bash
+npm install
+npm run dev
+```
+
+Open the local URL Vite prints (typically `http://localhost:5173`).
+
+```bash
+npm run build      # production build → dist/
+npm run preview    # preview the production build
+```
