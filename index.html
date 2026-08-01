@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hiring Funnel — Internship Hiring Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar__brand">
+        <div class="sidebar__logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 6h18M6 12h12M9 18h6"/>
+          </svg>
+        </div>
+        <div class="sidebar__brand-text">
+          <span class="sidebar__brand-name">Hiring Funnel</span>
+          <span class="sidebar__brand-sub">Internship Tracker</span>
+        </div>
+      </div>
+
+      <nav class="sidebar__nav">
+        <a class="nav-item active" data-page="dashboard" href="#dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+          <span>Dashboard</span>
+        </a>
+        <a class="nav-item" data-page="candidates" href="#candidates">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Candidates</span>
+        </a>
+        <a class="nav-item" data-page="funnel" href="#funnel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8v7l-4 2v-9z"/></svg>
+          <span>Hiring Funnel</span>
+        </a>
+        <a class="nav-item" data-page="documents" href="#documents">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
+          <span>Documents</span>
+        </a>
+        <a class="nav-item" data-page="inbox" href="#inbox">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+          <span>Inbox</span>
+        </a>
+        <a class="nav-item" data-page="analytics" href="#analytics">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+          <span>Analytics</span>
+        </a>
+        <a class="nav-item" data-page="guide" href="#guide">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 2-3 4"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span>Guide</span>
+        </a>
+      </nav>
+
+      <div class="sidebar__footer">
+        <div class="sidebar__card">
+          <div class="sidebar__card-title">Summer 2026 Cycle</div>
+          <div class="sidebar__card-sub">Active hiring window</div>
+          <div class="sidebar__card-progress">
+            <div class="sidebar__card-bar" style="width: 68%"></div>
+          </div>
+          <div class="sidebar__card-meta">68% complete</div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="sidebar__overlay" id="sidebarOverlay"></div>
+
+    <!-- Main -->
+    <div class="main">
+      <!-- Top nav -->
+      <header class="topbar">
+        <button class="topbar__menu" id="menuToggle" aria-label="Toggle menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+
+        <div class="topbar__search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" placeholder="Search candidates, roles, documents…" />
+        </div>
+
+        <div class="topbar__actions">
+          <button class="btn-ghost topbar__reset" id="resetDemoBtn" title="Reset all demo data to its initial state">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+            <span>Reset Demo</span>
+          </button>
+          <div class="notif-wrap" id="notifWrap">
+            <button class="topbar__icon" id="notifBtn" aria-label="Notifications">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+              <span class="topbar__badge" id="notifBadge" style="display:none"></span>
+            </button>
+            <div class="notif-panel" id="notifPanel"></div>
+          </div>
+          <div class="role-switcher" id="roleSwitcher">
+            <button class="role-switcher__btn" id="roleSwitcherBtn">
+              <div class="topbar__avatar" id="roleAvatar">RA</div>
+              <div class="topbar__user-info">
+                <span class="topbar__user-name" id="roleName">Rita Alvarez</span>
+                <span class="topbar__user-role" id="roleLabel">QSTP Admin</span>
+              </div>
+              <svg class="role-switcher__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="role-switcher__menu" id="roleSwitcherMenu">
+              <div class="role-switcher__hint">Switch role (mock login)</div>
+              <button class="role-option" data-role="qstp">
+                <div class="role-option__icon" style="background:var(--primary-50);color:var(--primary-500)">RA</div>
+                <div><div class="role-option__name">QSTP Admin</div><div class="role-option__desc">Full pipeline access — all startups</div></div>
+              </button>
+              <button class="role-option" data-role="startup">
+                <div class="role-option__icon" style="background:var(--accent-100);color:var(--accent-500)">DC</div>
+                <div><div class="role-option__name">Startup Lead</div><div class="role-option__desc">Quantum Labs — assigned candidates</div></div>
+              </button>
+              <button class="role-option" data-role="intern">
+                <div class="role-option__icon" style="background:var(--success-100);color:var(--success-500)">MC</div>
+                <div><div class="role-option__name">Intern</div><div class="role-option__desc">Maya Chen — applicant view</div></div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Page content -->
+      <main class="content" id="content"></main>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
